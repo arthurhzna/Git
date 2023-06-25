@@ -1,0 +1,106 @@
+
+cd <folder> >>>> masuk ke folder
+cd .. >>>> keluar folder
+
+git init >>>> membuat folder menjadi repository (master)
+
+sebelum bisa commi, hrus menulis nama dan email yang commnit
+
+get config --global user.email "email@dassdad.com"
+get config --global user.name "email@dassdad.com"
+
+cara commit repository 
+ubah file mau nambah atau hapus >>>> git add . (untuk masukkan ke stage smua file yang diubah dan ditambahkah) git add <nama.file> (untuk memasukkan ke stage 1 file saja mau di ubah/ditambahkan)
+
+setelah masuk ke stage. maka
+git commit -m "komentar commit" ( -m adalah message)
+
+kalau  git commnit >>>> hanya masuk ke sublime yang sudah di tetapkan pas di download  
+
+kalau masuk ke vim cara keluarnya itu >>>> esc lalu tulis :q!
+
+pwd >>>> adalah menampilkan lokasi sekarang di git bash nya 
+
+cara ke folder yang ingin kita git kan langsung saja di cd () lalu seret foldernya ke git bashnya 
+atau langsung ke folder yang ingin kita gitkan lalu klik kanan, lalu klik git bash here, nnti muncul git bashnya sendiri >>>> tpi ini belum langsung jadi repository masih harus di git init
+
+clear >>>> membersihkan area terminal menjadi kosong 
+
+Ctrl + c >>>> membatalkan perintal di terminal
+
+cara agar commit tanpa add dan langsung berkomentar iyalah
+git commit -a -m "komentar" >>>> -a adalah add atau bisa juga
+git commit -am "komentar" 
+
+
+git branch >>>> menampilkan branch apa aja >>>> klau ada * dan berwarna hijau artinya branchnya lagi aktif
+
+git branch (nama) >>>> membuat branch dengan commit yang sama pada saat branch itu dibuat 
+
+git log >>>> menampilkan history commit
+
+git log --all --decorate --oneline --graph >>>> menampilkan graph network seperti di github
+
+karna diatas perintahnya terlalu panjang dapat dibuatkan command sendiri dengan 
+alias <nama> "git log --all --decorate --oneline --graph"
+nnti tinggal panggil <nama> akan memanggil command git log --all --decorate --oneline --graph   >>>>> ini tidak work di visual studio code hanya di git brash
+
+git checkout <nama_branch> >>>>> untuk pindah branch
+
+
+>> git log --all --decorate --oneline --graph
+* a151358 (HEAD -> staff) menambahkan file staff
+| * c2f81dd (dosen) menambahkan file dosen.html
+|/  
+* 1f06922 (master) menambahkan list mahasiswa
+* ac4be1e menambahkan file mahasiswa.html
+
+
+| >>>> artinya cabang/ branch
+* >>>> artinya di commit 
+(HEAD) artinya yang aktif yaitu sekrang kita di cabang yang mana
+
+merge atau menggabungkan branch, dimana ada fast forward dan threeway marge, fast forward adalah direct perf atau jalur langsung, dimana diatas setelah di graph dapat diketahui headnya di staff, nah itu di pindaih dlu ke master, setelah headnya di master, dapat dilihat jalur langsungnya sekarang itu di staff dan dosen sesuai di graph tadi, nah jadi ingin merge dengan dosen, maka:
+
+git marge dosen >>>> menggabungkan branch dosen dengan master 
+
+PS D:\git 2> git merge dosen 
+Updating 1f06922..c2f81dd
+Fast-forward
+ dosen.html | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 dosen.html     >>>>>>>>  14 menandakan jumlah baris pada codingan file dosen.html, dimana yang terjadi adalah fast forward
+
+setelah itu branch dosen tidak dibutuhkan lagi , jadi kita hapus branch dosen, dimana kita saat ini harus di branch master
+dengan command
+
+git branch -d dosen >>>> d adalah delate 
+
+git branch --merged >>>> adalah perintah untuk mengetahui branch mana yang sudah di merge, jadi perintah ini untuk melihat apakah aman jika kita mendelate suatu branch yang sudah di merge atau tidak 
+
+branch yang belum di merge tidak bisa di delate menggunakan git branch -d <namabranch> , error: The branch 'staff' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D staff'. dimana harus memakai D besar untuk menghapusnya dengan mengabaikan warning blum di merge
+
+dimana sekarang jika di git branch 
+akan menghasilkan 
+* a151358 (staff) menambahkan file staff
+| * c2f81dd (HEAD -> master) menambahkan file dosen.html
+|/
+* 1f06922 menambahkan list mahasiswa
+* ac4be1e menambahkan file mahasiswa.html
+dimana master tidak terhubung langsung atau direct perflnya 
+maka jika di merge yang akan terjadi adalah three way merge atau merge commmit yaitu sambil mere sambil buat commmit baru 
+
+nah jika di merge dimana headnya akan di master dengan menghasilkan commit baru 
+
+
+
+
+
+
+
+
+
+
+
+			
