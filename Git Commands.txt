@@ -369,9 +369,9 @@ misal mau mengecualikan extension\
 
 *.exe >>>>>>> maka exe akan di kecualikan 
 
+ini ada panduannya di 
 
-
-
+https://github.com/github/gitignore dan bisa juga pakai gitignore.io
 
 
 
