@@ -93,6 +93,123 @@ maka jika di merge yang akan terjadi adalah three way merge atau merge commmit y
 
 nah jika di merge dimana headnya akan di master dengan menghasilkan commit baru 
 
+yang perintah alias <nama> "git log --all --decorate --oneline --graph" jika komputer sudah mati, alisnya sudah tidak berfungsi lagi 
+
+pada git merge conflict , di visual studio itu yang ijo adalah head yang aktif dan yang warna biru adalah branch yang ingin digabungkan 
+
+
+diman head yang telah di branch paling ujung akan pindah headnya ke commit yang di checkout 
+git checkout ambil 7digit strig
+lalu cek kode editor
+git checkout master >>>> kembali ke branch paling ujung
+lalu kembali ke commit yang tadi 
+pakai command sebelumnya juga sama
+dimana bisa di buat branch baru juga di commit itu
+git branch test
+graph
+dimana headnya belum mengarah ke branch test, masih terpisah (HEAD, test)
+jadi harus git checkout test
+graph
+(HEAD -> test)
+tapi gtw kenapa di graph tidak muncul cabang garis
+
+jika 
+git commit >>>>> saja ditulis di git bash, dimana akan muncul tst editor, itu di save aja  nnti d icommit sendiri diman di text editor itu sudah ada pesan commit di paling atas, jadi save as dan close, maka git sudah ter commit
+
+
+---------------------------
+remote repostirory github ke lokal komputer 
+- copy link https
+buat tmpt penyimpanan di lokal komputer
+di tmpt itu cd kan ke git bash,, 
+lalu 
+
+gt clone <link https>      >>>>>> gtw kenapa di terminal git bash tidak bisa , di vscode bisa, 
+
+lalu cd kan masuk ke  folder lagi 
+dimana folder  itu sudah langsung ter  git init dari githubnya jadi tidak perlu di git initkan lagi, dimana sudah menjadi respository dri github
+
+dimana remote itu ada namanya, dapat dicek di 
+
+git remote >>>> nnti outputnya origin sebagai default name untuk github
+
+klau dibuat sendiri remotenya namnay boleh bebas 
+
+git remote -v  <nama remote> nnti dikasih link origin untuk fetch dan push (dimana fetch dan push linknya sama)
+
+git status 
+
+On branch main
+Your branch is up to date with 'origin/main'. >>>>> artinya branchnya sama di lokal dan di github 
+
+nothing to commit, working tree clean
+
+$  alias graph="git log --all --decorate --oneline --graph"
+
+62853@DESKTOP-AGHS4GH MINGW64 /d/Aktivitas Ngoding 2023/Git/Git (main)
+$ graph
+* 5524868 (HEAD -> main, origin/main, origin/HEAD) Mengupload File Git Commands.
+txt
+* 85d790d Initial commit
+
+
+dimana (HEAD -> main, origin/main, origin/HEAD) >>> ada 3 buah branch, yang merah itu origin/main, origin/HEAD ada di remote kita  dimana sama sama di origin/main, origin/HEAD artinya sudah up to date smuanya sama sma isinya  
+
+tambahkan file di repository lokal 
+setelah itu add dan commit
+
+dan 
+62853@DESKTOP-AGHS4GH MINGW64 /d/Aktivitas Ngoding 2023/Git/Git (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+62853@DESKTOP-AGHS4GH MINGW64 /d/Aktivitas Ngoding 2023/Git/Git (main)
+$ graph
+* df2285f (HEAD -> main) Menambahkan File hmtl
+* 5524868 (origin/main, origin/HEAD) Mengupload File Git Commands.txt
+* 85d790d Initial commit
+
+62853@DESKTOP-AGHS4GH MINGW64 /d/Aktivitas Ngoding 2023/Git/Git (main)
+$
+
+
+dimana Your branch is ahead of 'origin/main' by 1 commit. dimana branch kita mendahului branch yang di remote 
+
+dapat dilihat di 
+$ graph
+* df2285f (HEAD -> main) Menambahkan File hmtl
+* 5524868 (origin/main, origin/HEAD) Mengupload File Git Commands.txt
+
+jadi hrus di 
+git push 
+
+
+mengecek akun siapa di dipakai saat ini git config --list 
+
+
+dimana jika berbeda dengan kaun github yang di remote, maka nama yang acak acak repository di github itu sesuai nama dan emial yang dimasukkan di lokal 
+
+
+dimana sebelumnya sudah di set
+get config --global user.email "email@dassdad.com"
+get config --global user.name "email@dassdad.com"
+
+dimana namanya dan emialnya sesuai akun githubku, -- global berlaku untuk apapun repository yang dikejerjakan nama dan emailnya itu yang dipakai, jika --local maka berlaku untuk repository itu saja yang saat itu di kerjakan 
+
+jika berbeda dapat di set ulang menggunakan command 
+get config --global user.email "email@dassdad.com"
+get config --global user.name "email@dassdad.com"
+
+
+
+
+
+
+
 
 
 
