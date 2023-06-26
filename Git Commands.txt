@@ -205,10 +205,169 @@ get config --global user.email "email@dassdad.com"
 get config --global user.name "email@dassdad.com"
 
 
+---------------------------------------
+sekarang repositry lokal di pindahkan ke github
+
+mkdir <nama folder> >>>>>> command membuat folder 
 
 
+dimana untuk ini kita hrus membuat repository sendiri di github dengan pada saat dibuat tidak mencentang 
+Initialize this repository with:
+
+Add a README file
+This is where you can write a long description for your project. Learn more about READMEs.
 
 
+nnti kluar ada dua opsi 
+
+…or create a new repository on the command line >>>> ini dipakai ketika di lokal belum ada repostiroy dan di github juga belum ada repository
+
+
+…or push an existing repository from the command line >>> pilih ini jika sudah ada di lokal repositrynya 
+
+
+dimna sebelumnya jika di git remote belum ada muncul git remote nya 
+
+
+jadi dipilih
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/arthurhzna/MyStm32Projects.git
+git branch -M main
+git push -u origin main
+
+
+>>>> origin itu nama remotenya, dimana bisa di ganti namanya, tetapi defaultnya pakai origin namanya 
+>>>>> git push -u origin main ini adalah perintah untuk mengcopy isi repository lokal ke github
+>>>>> Perintah "git branch -M main" digunakan untuk mengganti nama branch utama dari proyek Git menjadi "main"
+
+
+git remote add origin https://github.com/arthurhzna/MyStm32Projects.git
+
+sekrang sudah terhubung lokal dengan githubnya, 
+
+untuk penggunakan yang otak atik di lokal itu sama seperti diatas yang cara github ke lokal 
+
+dimana ketika diremote ada orang dluan push commitnya, dan kita di lokal terlambat push  ke github artinya kita dahului 1 commit, maka ketika di push di lokal 
+akan muncul 
+
+PS D:\Aktivitas Ngoding 2023\MyStm32Projects> git push
+To https://github.com/arthurhzna/MyStm32Projects.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/arthurhzna/MyStm32Projects.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS D:\Aktivitas Ngoding 2023\MyStm32Projects>
+
+
+jadi harus di fetch dlu, perbaruhi info commit di remote ke lokal 
+
+
+PS D:\Aktivitas Ngoding 2023\MyStm32Projects> git fetch
+PS D:\Aktivitas Ngoding 2023\MyStm32Projects> git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.  
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+PS D:\Aktivitas Ngoding 2023\MyStm32Projects> 
+
+
+dimana sudah diperbaharui .
+
+
+62853@DESKTOP-AGHS4GH MINGW64 /d/Aktivitas Ngoding 2023/MyStm32Projects (main)
+$ graph
+* 18552d7 (HEAD -> main) menambahkan style.css
+| * 6626520 (origin/main) Menambahkan file style.css
+|/
+* 2a2fc15 menambahkan paragraf pada index.php
+* a06132f menambahkan index.php
+
+
+sekrang dapat dilihat lokal dan remote bercabang, artinya hrus di merge dlu, sebelum di merge, hrus di ambil file commitnya yang ada di github dengan pull 
+
+lalu ubah di file style.css yang conflict, perbaiki dan add dan commit 
+
+setelah itu git push di lokal
+dan sudah di merge
+
+
+-------------
+code . >>>>> digunakan untuk membuat code editor
+--------------
+multipe remote 
+
+pertama fork diakun kita dari repository orang
+setelah itu clone https di lokal komputer
+
+dimana sudah jadi remote origin 
+
+selanjutnya kita ingin repository orang itu up to date dengan repository yang di fork ke repository kita, jadi 
+buat lagi remote baru di git bash, usahakan namanya dikasih berbeda 
+
+lalu git remote
+
+dapat dilhat ada dua remote
+
+lalu fetch remote repository orang itu
+dengan 
+git fetch <nama remote orang itu yang sebelumnya telah di inisialisasi diatas >
+
+
+sekrang orang itu ubah repositrynya
+
+nah di lokal komputer kita 
+kita git status, nah terdeteksi ada perubahan, setleah itu di fetch dlu biar di perbaharui (git fetch <nama remote orang itu yang sebelumnya telah di inisialisasi diatas >) lalu merge  
+
+git merge <nama remote orang itu yang sebelumnya telah di inisialisasi diatas >/master
+
+lalu push -u origin master 
+-------------------------------------------------------------------------------------------------------
+kodingan ini berlanjut dengan yang tadi yang sinkron ke repositry orang
+cara pull request ke repostiry orang yang di fork
+
+nah ketiaka ingin mengubah code, usahan ubah masater repository kita itu di buatkan branch , jadi yang di pull request itu branchnya !
+
+git checkout -b  >>>>> digunakan untuk membuat branch baru dan langsung pindah ke branch itu 
+
+skrng branch sudah pindah di branch yang baru, lalu edit file > add>commit >push ke origin <nama branch> 
+
+nah untuk pull request itu sendiri hanya bisa di website githubnya sendiri 
+
+
+setelah orang itu menerimana pull requst kira, nah sekrang kita ingin menyamakan lokal kita dengan repostiry di github kita dengan updatean baru dari orang itu
+nah caranya itu sama seperti tadi yang diatas 
+
+lalu hapus branch baru yang kita buat itu karna sudah tidak dibutuhkan 
+
+
+git branch -d <nama branch> >>>>>hapus branch di lokal 
+git push origin --d <nama branch> >>>>> hapus branch di github dan push perubahan lokal 
+
+-------------------------------------------------------------------------------------------------------
+
+.gitignore >>> ada ketika kita add&commit ada file yang tidak keikut terbawa ke addnya 
+
+contohnya file sistem di konmputer kita, kita tidak ingin file tersebut ikut terbawa, misalnya file hidden temp di windows, 
+
+carapakai ini adalah
+di repository dibuatkan file 
+.gitignore
+
+didalam gitignore tuliskan nama filenya 
+gitu doang ....
+
+
+bisa juga dalam file .gitignore di masukkan folder, jadi tuliskan didalam file ignorenya data/
+
+misal mau mengecualikan extension\
+
+*.exe >>>>>>> maka exe akan di kecualikan 
 
 
 
