@@ -373,8 +373,45 @@ ini ada panduannya di
 
 https://github.com/github/gitignore dan bisa juga pakai gitignore.io
 
+-------------------------------------
+rebase 
+      /*(features)
+-*-*-*---*(master)  misal nya ada workflow begini
 
 
+jadi rebase itu branchnya maju ke masternya 
+
+           /*(features)
+-*-*-*---*(master)
+
+sehingga di marge sudah dapat di fast forward tanpa membuat commit baru 
+
+
+digithub dapat dilakukan kolaborasi pada repository orang dimana repository orang itu tidak perlu di pull request lagi, dimana dapat langsung dapat di acak acak mau buat branch mau buat merge atau commit dapat langsung dilakukan, jadi caranya itu ada di setting/collaboratos dengan cara memasukkan username, nama atau email , dimana orang yang diinvt tidak langsung dapat berkolaborasi, dimana orang yang di invt harus mengacc terlebih dahulu
+
+dan dimana cara masukkan reponya ke loak litu sama seperti biasa 
+
+
+aturan colaborasi adalah, dimana setiap menambahkan fitur, kita harus menambahkan branch dlu supaya di maste tidak terganggu ........
+
+untuk rebase kita hrus pindah ke branch cabang atau diatas (features) dengan perintah
+
+git rebase master 
+
+dimana masternya akan ketinggalan 
+
+           /*(features)
+-*-*-*---*(master)
+
+jadi pindah ke master, lalu rebase lagi 
+
+git rebase features 
+
+lalu push lagi ke origin github 
+
+git push -u origin master >>>>> klau nda yakin, tpi klau mau push usahana pakai -u saja 
+
+---------------------------------------------------------------------------------------------
 
 
 
