@@ -412,6 +412,7 @@ lalu push lagi ke origin github
 git push -u origin master >>>>> klau nda yakin, tpi klau mau push usahana pakai -u saja 
 
 ---------------------------------------------------------------------------------------------
+akan diupdate klau mau kolab bru belajar lagi 
 
 
 
